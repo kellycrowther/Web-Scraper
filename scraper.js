@@ -5,12 +5,6 @@ var linkscrape = require('linkscrape');
 
 var arrayTrailUrls = [];
 
-// var lineArray = [];
-// trailInfo.forEach(function (infoArray, index) {
-//     var line = infoArray.join(",");
-//     lineArray.push(index == 0 ? "data:text/csv;charset=utf-8," + line : line);
-// });
-// var csvContent = lineArray.join("\n");
 
 //working function to scrape trail details off particular page and pass details
 //into an array
@@ -108,36 +102,3 @@ request('http://www.fs.usda.gov/activity/deschutes/recreation/hiking/?recid=3828
     // console.log(relativePathUrls);
     return true;
   });
-
-
-
-// Tualatin Hills skeleton
-//
-// var request = require('request');
-// var cheerio = require('cheerio');
-//
-// days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-// pools = {
-//     'Aloha': 3,
-//     'Beaverton': 15,
-//     'Conestoga': 12,
-//     'Harman': 11,
-//     'Raleigh': 6,
-//     'Somerset': 22,
-//     'Sunset': 5,
-//     'Tualatin Hills': 2
-// };
-// for (pool in pools) {
-//     var url = 'http://www.thprd.org/schedules/schedule.cfm?cs_id=' + pools[pool];
-//
-//     request(url, (function(pool) { return function(err, resp, body) {
-//         $ = cheerio.load(body);
-//         $('#calendar .days td').each(function(day) {
-//             $(this).find('div').each(function() {
-//                 event = $(this).text().trim().replace(/\s\s+/g, ',').split(',');
-//                 if (event.length >= 2 && (event[1].match(/open swim/i) || event[1].match(/family swim/i)))
-//                     console.log(pool + ',' + days[day] + ',' + event[0] + ',' + event[1]);
-//             });
-//         });
-//     }})(pool));
-// }
